@@ -22,7 +22,6 @@ else {
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, "../backend/frontend/dist")));
 
-    // For all other routes, serve the index.html file
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, "../backend/frontend/dist", "index.html"));
     });
